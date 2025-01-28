@@ -10,11 +10,14 @@ async def beep(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except IndexError:
         await context.bot.send_message(update.effective_chat.id, f"No se especificó la frecuencia")
         print(f"No se especificó la frecuencia")
+        return
     try:
         tiempo = context.args[1]
     except IndexError:
         await context.bot.send_message(update.effective_chat.id, f"No se especificó el tiempo")
+        print(f"No se especificó el tiempo")
+        return
 
-        os.system(f'beep -f {frecuencia} -l {tiempo}')
-        await context.bot.send_message(update.effective_chat.id, f"Emitiendo un pitido de {frecuencia} Hz durante {tiempo/1000} segundos")
+    os.system(f'beep -f {frecuencia} -l {tiempo}')
+    await context.bot.send_message(update.effective_chat.id, f"Emitiendo un pitido de {frecuencia} Hz durante {tiempo/1000} segundos")
 
