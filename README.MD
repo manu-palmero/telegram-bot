@@ -14,6 +14,6 @@ services:
     image: ghcr.io/manu-palmero/telegram-bot:main
     container_name: telegram-bot
     environment:
-    - BOT_TOKEN = "TOKEN"
+    - BOT_TOKEN="TOKEN"
     restart: unless-stopped
 ```
