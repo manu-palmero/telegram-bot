@@ -19,7 +19,7 @@ async def beep(update: Update, context: ContextTypes.DEFAULT_TYPE):
             print(f"No se especificó el tiempo")
             return
         else:
+            s = float(tiempo)/1000
+            await context.bot.send_message(update.effective_chat.id, f"Emitiendo un pitido de {frecuencia} Hz durante {s} segundos")
             os.system(f'beep -f {frecuencia} -l {tiempo}')
-            t = float(tiempo)
-            await context.bot.send_message(update.effective_chat.id, f"Emitiendo un pitido de {frecuencia} Hz durante {t/1000} segundos")
-
+            await context.bot.send_message(update.effective_chat.id, f"Se terminó de emitir el pitido de {frecuencia} Hz")
