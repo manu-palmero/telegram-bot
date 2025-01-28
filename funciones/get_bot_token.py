@@ -2,7 +2,7 @@ import os
 
 def get_bot_token():
     token = os.getenv("BOT_TOKEN")
-    print(token)
+    # print(token) # test
     if token:
         return token
     else:
