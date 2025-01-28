@@ -11,7 +11,7 @@ def main():
 
     add_cmds(application)
 
-    application.run_polling(1.0)
+    application.run_polling()
 
 
 def add_cmds(application):
@@ -23,6 +23,9 @@ def add_cmds(application):
 
     temp_handler = CommandHandler('temp', comandos.temp)
     application.add_handler(temp_handler)
+
+    beep_handler = CommandHandler('beep', comandos.beep)
+    application.add_handler(beep_handler)
 
 
 if __name__ == '__main__':
