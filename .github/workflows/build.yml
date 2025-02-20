@@ -50,4 +50,6 @@ jobs:
         context: .
         push: true
         tags: |
-            ${{ github.repository }}:${{ github.ref == 'refs/heads/main' && 'latest' || 'test' }}
+            ghcr.io/${{ github.repository }}:${{ github.ref == 'refs/heads/main' && 'latest' || 'test' }}
+        labels: |
+            ${{ github.ref == 'refs/heads/main' && format('ghcr.io/{0}/{1}:latest', github.repository_owner, github.event.repository.name) || '' }}
