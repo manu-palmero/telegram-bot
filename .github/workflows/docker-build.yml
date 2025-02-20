@@ -6,9 +6,9 @@ on:
   # schedule:
     # - cron: '35 3 * * *'
   push:
-    branches: [ "master", test ]
+    branches: [ "main", test ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 env:
   # Use docker.io for Docker Hub if empty
