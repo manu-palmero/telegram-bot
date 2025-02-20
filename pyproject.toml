@@ -15,6 +15,7 @@ requires-python = ">=3.6"
 dependencies = [
     "python-telegram-bot",
     "psutil",
+    "requests",
 ]
 
 [project.urls]
