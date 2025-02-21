@@ -12,7 +12,7 @@ realiazar acciones en un servidor ejecutándose en un contenedor de docker.
 services:
   telegram-bot:
     network_mode: host # Si da problemas de red al ejecutarse, añadir esta línea
-    image: ghcr.io/manu-palmero/telegram-bot:main
+    image: ghcr.io/manu-palmero/telegram-bot:latest
     container_name: telegram-bot
     environment:
     - BOT_TOKEN=TOKEN # Sin comillas
