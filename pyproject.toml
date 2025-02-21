@@ -14,8 +14,6 @@ license = { file = "LICENSE" }
 requires-python = ">=3.6"
 dependencies = [
     "python-telegram-bot",
-    "psutil",
-    "requests",
 ]
 
 [project.urls]
@@ -26,4 +24,4 @@ Tracker = "https://github.com/manu-palmero/telegram-bot/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["comandos*"]
+include = ["comandos*", "funciones*"]
