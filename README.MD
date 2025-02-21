@@ -14,6 +14,8 @@ services:
     network_mode: host # Si da problemas de red al ejecutarse, añadir esta línea
     image: ghcr.io/manu-palmero/telegram-bot:latest
     container_name: telegram-bot
+    devices:
+      - "/dev/input/by-path/platform-pcspkr-event-spkr:/dev/input/by-path/platform-pcspkr-event-spkr" # Añadir para usar el comando beep, es opcional :)
     environment:
     - BOT_TOKEN=TOKEN # Sin comillas
     restart: unless-stopped
