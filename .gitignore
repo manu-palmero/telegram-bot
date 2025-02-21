@@ -2,6 +2,7 @@
 ### Example user template
 
 .vscode
+docker-container
 
 # IntelliJ project files
 .idea
