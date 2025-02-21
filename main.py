@@ -26,6 +26,12 @@ def add_cmds(application):
 
     beep_handler = CommandHandler('beep', comandos.beep)
     application.add_handler(beep_handler)
+    
+    botones_handler = CommandHandler('botones', comandos.botones)
+    application.add_handler(botones_handler)
+    
+    button_handler = CallbackQueryHandler(comandos.button)
+    application.add_handler(button_handler)
 
 
 if __name__ == '__main__':
