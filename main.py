@@ -1,7 +1,8 @@
 from telegram.ext import *
+from telegram import *
 
 import funciones
-import comandos
+from comandos import *
 
 TOKEN = funciones.get_bot_token()
 
@@ -15,22 +16,22 @@ def main():
 
 
 def add_cmds(application):
-    start_handler = CommandHandler('start', comandos.start)
+    start_handler = CommandHandler('start', start.start)
     application.add_handler(start_handler)
 
-    echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), comandos.echo)
+    echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), echo.echo)
     application.add_handler(echo_handler)
 
-    temp_handler = CommandHandler('temp', comandos.temp)
+    temp_handler = CommandHandler('temp', temp.temp)
     application.add_handler(temp_handler)
 
-    beep_handler = CommandHandler('beep', comandos.beep)
+    beep_handler = CommandHandler('beep', beep.beep)
     application.add_handler(beep_handler)
     
-    botones_handler = CommandHandler('botones', comandos.botones)
+    botones_handler = CommandHandler('botones', prueba_botón.botones)
     application.add_handler(botones_handler)
     
-    button_handler = CallbackQueryHandler(comandos.button)
+    button_handler = CallbackQueryHandler(button.button)
     application.add_handler(button_handler)
 
 
